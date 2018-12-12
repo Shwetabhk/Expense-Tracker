@@ -1,0 +1,21 @@
+<div class="container" fxLayout="column">
+  <div fxFlex>
+    <form [formGroup]="newexpense">
+      <mat-form-field>
+        <input matInput placeholder="Item Name" formControlName="name" required>
+      </mat-form-field><br>
+      <mat-form-field>
+        <input matInput placeholder="Date of Purchase" type="date" formControlName="date" required>
+      </mat-form-field><br>
+      <mat-form-field>
+        <input matInput placeholder="Cost of Item" formControlName="total" required>
+        <span matPrefix>Rs.&nbsp;</span>
+      </mat-form-field><br>
+      <label for="image">Image of Item: </label>
+      <input type="file" accept="image/*" class="form-control" id="image" (change)="onFileChanged($event)" required
+        name="image">
+      <br>
+      <button type="submit" class="btn btn-success" (click)="submit()">Submit</button>
+    </form>
+  </div>
+</div>

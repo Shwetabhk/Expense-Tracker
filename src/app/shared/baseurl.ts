@@ -1,0 +1,1 @@
+export const BaseURL = "https://shwetabh.pythonanywhere.com/api/v1";

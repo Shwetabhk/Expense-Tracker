@@ -1,0 +1,33 @@
+$lt-gray: #ddd;
+$background-dark: #512DA8;
+$background-light: #9575CD;
+$background-pale: #D1C4E9;
+$primary-color-dark:   #512DA8;
+$primary-color:        #673AB7;
+$primary-color-light:  #D1C4E9;
+$primary-color-text:   #FFFFFF;
+$accent-color:         #FFC107;
+$primary-text-color:   #212121;
+$secondary-text-color: #757575;
+$divider-color:        #BDBDBD;
+$green: rgb(1, 245, 1);
+
+@mixin zero-margin($pad-up-down, $pad-left-right) {
+    margin: 0px auto;
+    padding: $pad-up-down $pad-left-right;
+}
+
+.jumbotron {
+    @include zero-margin(30px,30px);
+    background: $background-dark ;
+    color:floralwhite;
+    min-height: 100px;
+}
+
+a{
+    color: $accent-color;
+}
+
+a:hover{
+    color: $green;
+}

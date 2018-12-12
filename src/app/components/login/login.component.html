@@ -1,0 +1,88 @@
+<mat-tab-group>
+  <mat-tab label="Sign-Up">
+    <mat-card>
+      <mat-vertical-stepper linear="true" #stepper>
+        <mat-step stepControl="1">
+          <form [formGroup]="nameform">
+            <ng-template matStepLabel>Fill out your Details</ng-template>
+            <mat-form-field>
+              <input matInput placeholder="First name" formControlName="first_name" required>
+            </mat-form-field><br>
+            <mat-form-field>
+              <input matInput placeholder="Last name" formControlName="last_name" required>
+            </mat-form-field>
+            <div>
+              <button mat-button matStepperNext>Next</button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step stepControl="2">
+          <form [formGroup]="credentialsform">
+            <ng-template matStepLabel>Fill out your Credentials</ng-template>
+            <mat-form-field>
+              <input matInput placeholder="Email" formControlName="email" required>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+              <input matInput type="password" placeholder="Password" formControlName="password" required>
+            </mat-form-field>
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button matStepperNext>Next</button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step stepControl="3">
+          <ng-template matStepLabel>Done</ng-template>
+          You are now done.
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button (click)="stepper.reset()">Reset</button>
+            <button mat-button (click)="signup()" [disabled]="!(nameform.valid && credentialsform.valid)">Signup</button>
+          </div>
+        </mat-step>
+      </mat-vertical-stepper>
+      <div *ngIf="signuperrmsg">
+        <h3 text-center>{{ signuperrmsg }}</h3>
+      </div>
+    </mat-card>
+
+  </mat-tab>
+  <mat-tab label="Login">
+    <mat-card>
+      <mat-vertical-stepper linear="true" #stepper>
+
+        <mat-step stepControl="1">
+          <form [formGroup]="credentialsform">
+            <ng-template matStepLabel>Fill out your Credentials</ng-template>
+            <mat-form-field>
+              <input matInput placeholder="Email" formControlName="email" required>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+              <input matInput type="password" placeholder="Password" formControlName="password" required>
+            </mat-form-field>
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button matStepperNext>Next</button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step stepControl="2">
+          <ng-template matStepLabel>Done</ng-template>
+          You are now done.
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button (click)="stepper.reset()">Reset</button>
+            <button mat-button (click)="login()" [disabled]="!credentialsform.valid">Login</button>
+          </div>
+        </mat-step>
+      </mat-vertical-stepper>
+      <div *ngIf="loginerrmsg">
+        <h3 text-center>{{ loginerrmsg }}</h3>
+      </div>
+    </mat-card>
+
+  </mat-tab>
+
+</mat-tab-group>
