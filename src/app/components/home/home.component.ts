@@ -67,7 +67,7 @@ export class HomeComponent implements OnInit {
     const dialogref = this.dialog.open(CreateExpenseComponent, { data: { "type": 1 } });
     dialogref.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      result.image="https://shwetabh.pythonanywhere.com/"+result.image;
+      result.image = result.image;
       this.expenses.push(result);
       this.refresh()
       console.log(this.expenses);
@@ -83,7 +83,7 @@ export class HomeComponent implements OnInit {
     dialogref.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       this.expenses[i]=result;
-      this.expenses[i].image="https://shwetabh.pythonanywhere.com/"+this.expenses[i].image;
+      this.expenses[i].image = this.expenses[i].image;
       this.refresh();
       console.log(this.expenses);
     });

@@ -1,1 +1,1 @@
-export const BaseURL = "https://shwetabh.pythonanywhere.com/api/v1";
+export const BaseURL = "https://expen-track.herokuapp.com/api/v1";
