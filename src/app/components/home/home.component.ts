@@ -51,7 +51,7 @@ export class HomeComponent implements OnInit {
   }
 
   getallexpense() {
-    this.expense.getallexpense().subscribe((e) => { this.expenses = e.results;this.refresh(); console.log(this.expenses); }, (error) => { this.errmsg = error; console.log(this.errmsg); })
+    this.expense.getallexpense().subscribe((e) => { this.expenses = e;this.refresh(); console.log(this.expenses); }, (error) => { this.errmsg = error; console.log(this.errmsg); })
   }
 
   reload(){
